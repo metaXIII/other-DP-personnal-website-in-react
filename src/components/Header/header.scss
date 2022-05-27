@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header_container--nav {
+  display: flex;
+  align-items: center;  
+  align-self: flex-start;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  
+  /* margin-right: 1em; */
+}
+
+nav li {
+  list-style: none;
+}
