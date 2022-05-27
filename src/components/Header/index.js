@@ -1,7 +1,7 @@
 import './header.scss';
 
 const Header = () => (
-  <header id="top">
+  <header className="header header_background">
     <div className="header_container">
       <h3 className="title title_header">David Poulain</h3>
     </div>

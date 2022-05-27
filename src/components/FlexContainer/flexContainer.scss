@@ -1,0 +1,67 @@
+.box {
+  margin: 1em;
+  max-width: 150px;
+  height: 225px;
+  background-color: transparent;
+  perspective: 1000px;
+
+  &:hover .card{
+    transform: rotateY(180deg);
+    // transition: transform 0.7s ease-in-out;
+  }
+
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
+  transform-style: preserve-3d;
+
+  &_button {
+    width: 70px;
+    height: 25px;
+  }
+
+  &_front,
+  .card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  &_front {
+    // background-color: #cccccc;
+    background-image: url(../../assets/images/cardbackground.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #111111;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+  }
+  &_back {
+    background-color: #8ebf42;
+    color: #eeeeee;
+    transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+  }
+
+  }
+
+
+.container_flex {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// .container_flex > * {
+//   flex-basis: 100%;
+// }
