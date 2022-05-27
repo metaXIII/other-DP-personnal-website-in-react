@@ -8,6 +8,8 @@
   flex-wrap: wrap;
   height: 50px;
   width: 100vw;
+  
+  
 
   &_container--nav {
     display: flex;
@@ -17,7 +19,11 @@
 
   &_background {
     background-color: black;
+    top: -50px;
     color: white;
+    transform: translate3d(0, 100%, 0);
+    transition: transform .3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    
   }
 }
 
