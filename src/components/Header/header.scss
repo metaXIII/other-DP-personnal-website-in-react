@@ -10,7 +10,6 @@
   height: 50px;
   width: 100vw;
   font-size: 1.3em;
-  color: #FAF6EC;
 
   &_black {
     color: black;
@@ -46,13 +45,16 @@
 nav {
   display: flex;
   flex-wrap: wrap;
-  
-  margin-right: 1em;
 }
 
 nav li {
   list-style: none;
   margin: 0 1em;
+  transition: ease-in-out .2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .title_header {

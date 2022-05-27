@@ -1,11 +1,18 @@
+.container_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  row-gap: 15px;
+}
+
 .box {
-  margin: 1em 5em;
+  margin: 1em 0em;
   margin-bottom: 2em;
   width: 250px;
   height: 360px;
   background-color: transparent;
   perspective: 1000px;
-
   &:hover .card{
     transform: rotateY(180deg);
     // transition: transform 0.7s ease-in-out;
@@ -55,11 +62,7 @@
   }
 
 
-.container_flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 // .container_flex > * {
 //   flex-basis: 100%;
