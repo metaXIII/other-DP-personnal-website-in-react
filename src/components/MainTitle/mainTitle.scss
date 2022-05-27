@@ -1,0 +1,40 @@
+.section_home {
+  font-family: korolev, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  display: grid;
+  place-items: center;
+  color: #FAF6EC;
+}
+
+.home_container {
+  // width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 15em auto;
+  
+}
+
+.title_main {
+  font-size: clamp(3rem, 8vw + 1rem, 12rem);
+  // margin-right: 2em;
+
+  &--secondary {
+    margin-left: auto;
+    margin-right: 1em
+  }
+  
+}
+
+.title_main--subtitle {
+  font-size: clamp(1rem, 3vw + 1rem, 3rem);   
+  font-weight: 300;
+  font-style: italic;
+  margin-left: 1.7em;
+}
+
+.focus {
+  font-weight: 700;
+}

@@ -10,10 +10,6 @@ const FlexContainer = () => (
     <FlexElement />
     <FlexElement />
     <FlexElement />
-    <FlexElement />
-    <FlexElement />
-    <FlexElement />
-    <FlexElement />
   </section>
 );
 
