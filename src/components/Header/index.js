@@ -10,7 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const changeColor = () => {
     if (window.scrollY >= 50) {
-      console.log('je scroll de 50');
+      // console.log('je scroll de 50');
       dispatch(changeHeaderBackground(true));
     } else {
       dispatch(changeHeaderBackground(false));
@@ -20,7 +20,7 @@ const Header = () => {
   window.addEventListener('scroll', changeColor);
   return (
     <>
-      {headerColor && (<HeaderBackground />)};
+      <HeaderBackground />
       <header className={headerColor ? 'header' : 'header'}>
         <div className="header_container">
           <h3 className="title title_header">David Poulain</h3>
