@@ -1,0 +1,15 @@
+.topButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(250, 246, 236, 0.8);
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  transition: ease-in-out .3s;
+  
+
+  &-hidden {
+    display: none;
+  }
+}
