@@ -1,6 +1,6 @@
 import './topButton.scss';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { HashLink } from 'react-router-hash-link';
 
 const TopButton = () => {
   const headerColor = useSelector((state) => state.headerColor);
