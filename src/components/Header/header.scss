@@ -77,17 +77,52 @@ nav li {
   
 }
 
+.btn {
+  display: none;
+}
+
+.liste {
+  // position: relative;
+}
+
 @media screen and (max-width: 840px){
   .header {
+    margin-top: 15px;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
 
     &_container--nav {
-      align-self: center;
-      // background-color: #FAF6EC;
+      background-color: #FAF6EC;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      color: black;  
     }
 
+  }
+
+  .btn { 
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+  }
+
+  nav li {
+    // margin: 0.5em 0;
+  }
+
+  .li:nth-child(1) {
+    margin-top: 50px;
+  }
+
+  .li {
+    height: 50px;
+    width: 100%;
+    background-color: #FAF6EC;
+    line-height: 50px;
   }
 
   .darkmode {

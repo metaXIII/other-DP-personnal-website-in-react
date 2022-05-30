@@ -1,11 +1,14 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeHeaderBackground } from '../../actions';
+import { changeHeaderBackground, toggleMenu } from '../../actions';
 
 import HeaderBackground from './HeaderBackground';
 
 import './header.scss';
 
 const Header = () => {
+  let width = useSelector((state) => state.width);
+  const visibleMenu = useSelector((state) => state.visibleMenu);
   const headerColor = useSelector((state) => state.headerColor);
   const dispatch = useDispatch();
   const changeColor = () => {
@@ -18,6 +21,20 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    const changeWidth = () => {
+      width = window.innerWidth;
+      if (window.innerWidth > 840) {
+        toggleMenu(true);
+      }
+    };
+    window.addEventListener('resize', changeWidth);
+
+    return () => {
+      window.removeEventListener('resize', changeWidth);
+    };
+  }, []);
+
   window.addEventListener('scroll', changeColor);
   return (
     <>
@@ -28,24 +45,33 @@ const Header = () => {
         </div>
         <div className="header_container header_container--nav">
           <nav>
-            <ul>
-              <li><a href="#services" className="text">&#91; Services &amp; Skill &#93;</a></li>
-              <li><a href="#portfolio" className="text">&#91; Portfolio &#93;</a></li>
-              <li><a href="#about" className="text">&#91; A propos &#93;</a></li>
-              <li><a href="#contact" className="text">&#91; Contact &#93;</a></li>
-              {/* <li>
-                <button 
-                  className="darkmode" 
-                  type="button" 
-                  name="dark_light" 
-                  // onclick="toggleLightMode()" 
-                  title="Toggle dark/light mode" />
-              </li> */}
-            </ul>
+            {(visibleMenu || width > 840) && (
+              <ul className="liste">
+                <li><a href="#services" className="li">&#91; Services &amp; Skill &#93;</a></li>
+                <li><a href="#portfolio" className="li">&#91; Portfolio &#93;</a></li>
+                <li><a href="#about" className="li">&#91; A propos &#93;</a></li>
+                <li><a href="#contact" className="li">&#91; Contact &#93;</a></li>
+                {/* <li>
+                  <button 
+                    className="darkmode" 
+                    type="button" 
+                    name="dark_light" 
+                    // onclick="toggleLightMode()" 
+                    title="Toggle dark/light mode" />
+                </li> */}
+              </ul>
+            )}
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                dispatch(toggleMenu());
+              }}
+            >
+              BTN
+            </button>
           </nav>
-          
         </div>
-        
       </header>
       <button 
             className="darkmode" 
