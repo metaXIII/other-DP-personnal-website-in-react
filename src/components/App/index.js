@@ -1,8 +1,11 @@
 // == Import
 import Header from 'src/components/Header';
-import FlexContainer from 'src/components/FlexContainer';
+import Portfolio from 'src/components/Portfolio';
 import MainTitile from 'src/components/MainTitle';
 import TopButton from 'src/components/TopButton';
+import ServicesSkill from 'src/components/ServicesSkill';
+import About from 'src/components/About';
+import Contact from 'src/components/Contact';
 
 import './styles.scss';
 
@@ -13,7 +16,10 @@ function App() {
       <Header />
       <TopButton />
       <MainTitile />
-      <FlexContainer />
+      <ServicesSkill />
+      <Portfolio />
+      <About />
+      <Contact />
     </div>
   );
 }

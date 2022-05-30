@@ -12,7 +12,8 @@ const Header = () => {
     if (window.scrollY >= 50) {
       // console.log('je scroll de 50');
       dispatch(changeHeaderBackground(true));
-    } else {
+    }
+    else {
       dispatch(changeHeaderBackground(false));
     }
   };
@@ -21,16 +22,18 @@ const Header = () => {
   return (
     <>
       <HeaderBackground />
-      <header id="top" className={headerColor ? 'header header_black' : 'header'}>
+      <header className={headerColor ? 'header header_black' : 'header'}>
         <div className="header_container">
           <h3 className="title title_header">David Poulain</h3>
         </div>
         <div className="header_container header_container--nav">
           <nav>
-            <li><a href="#services" className="text">&#91; Services &amp; Skill &#93;</a></li>
-            <li><a href="#portfolio" className="text">&#91; Portfolio &#93;</a></li>
-            <li><a href="#about" className="text">&#91; A propos &#93;</a></li>
-            <li><a href="#contact" className="text">&#91; Contact &#93;</a></li>
+            <ul>
+              <li><a href="#services" className="text">&#91; Services &amp; Skill &#93;</a></li>
+              <li><a href="#portfolio" className="text">&#91; Portfolio &#93;</a></li>
+              <li><a href="#about" className="text">&#91; A propos &#93;</a></li>
+              <li><a href="#contact" className="text">&#91; Contact &#93;</a></li>
+            </ul>
           </nav>
           <button 
             className="darkmode" 
