@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeHeaderBackground, toggleMenu } from '../../actions';
+import { changeHeaderBackground, toggleMenu, updateWidth, toggleMenuWithWidth } from '../../actions';
 
 import HeaderBackground from './HeaderBackground';
 
 import './header.scss';
 
 const Header = () => {
-  let width = useSelector((state) => state.width);
+  const width = useSelector((state) => state.width);
   const visibleMenu = useSelector((state) => state.visibleMenu);
   const headerColor = useSelector((state) => state.headerColor);
   const dispatch = useDispatch();
@@ -23,17 +23,23 @@ const Header = () => {
 
   useEffect(() => {
     const changeWidth = () => {
-      width = window.innerWidth;
+      dispatch(updateWidth(window.innerWidth));
       if (window.innerWidth > 840) {
-        toggleMenu(true);
+        dispatch(toggleMenuWithWidth(false));
       }
+      // else {
+      //   dispatch(updateWidth(true));
+      // }
     };
     window.addEventListener('resize', changeWidth);
 
-    return () => {
-      window.removeEventListener('resize', changeWidth);
-    };
+    // return () => {
+    //   window.removeEventListener('resize', changeWidth);
+    // };
   }, []);
+  // const changeWidth = () => (
+  //   dispatch(updateWidth(window.innerWidth))
+  // );
 
   window.addEventListener('scroll', changeColor);
   return (
@@ -51,14 +57,6 @@ const Header = () => {
                 <li><a href="#portfolio" className="li">&#91; Portfolio &#93;</a></li>
                 <li><a href="#about" className="li">&#91; A propos &#93;</a></li>
                 <li><a href="#contact" className="li">&#91; Contact &#93;</a></li>
-                {/* <li>
-                  <button 
-                    className="darkmode" 
-                    type="button" 
-                    name="dark_light" 
-                    // onclick="toggleLightMode()" 
-                    title="Toggle dark/light mode" />
-                </li> */}
               </ul>
             )}
             <button
