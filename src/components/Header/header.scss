@@ -62,6 +62,10 @@ nav li {
 }
 
 .darkmode {
+  z-index: 990;
+  position: fixed;
+  top : 12.5px;
+  right: 10px;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -71,4 +75,30 @@ nav li {
   background-repeat: no-repeat;
   background-position: center;
   
+}
+
+@media screen and (max-width: 840px){
+  .header {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+
+    &_container--nav {
+      align-self: center;
+      // background-color: #FAF6EC;
+    }
+
+  }
+
+  .darkmode {
+    right: 20%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    
+    // background-color: #FAF6EC;
+
+  }
+
 }

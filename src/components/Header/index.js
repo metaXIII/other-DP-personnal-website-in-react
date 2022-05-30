@@ -33,16 +33,26 @@ const Header = () => {
               <li><a href="#portfolio" className="text">&#91; Portfolio &#93;</a></li>
               <li><a href="#about" className="text">&#91; A propos &#93;</a></li>
               <li><a href="#contact" className="text">&#91; Contact &#93;</a></li>
+              {/* <li>
+                <button 
+                  className="darkmode" 
+                  type="button" 
+                  name="dark_light" 
+                  // onclick="toggleLightMode()" 
+                  title="Toggle dark/light mode" />
+              </li> */}
             </ul>
           </nav>
-          <button 
+          
+        </div>
+        
+      </header>
+      <button 
             className="darkmode" 
             type="button" 
             name="dark_light" 
             // onclick="toggleLightMode()" 
             title="Toggle dark/light mode" />
-        </div>
-      </header>
     </>
   )
 };
