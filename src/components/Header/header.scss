@@ -87,6 +87,7 @@ nav li {
 
 @media screen and (max-width: 840px){
   .header {
+    
     margin-top: 15px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -97,8 +98,7 @@ nav li {
       width: 100%;
       justify-content: center;
       text-align: center;
-      margin: auto;
-      color: black;  
+      color: black;
     }
 
   }
@@ -126,7 +126,8 @@ nav li {
   }
 
   .darkmode {
-    right: 20%;
+    right: 70px;
+    top: 15px;
   }
 
   nav ul {

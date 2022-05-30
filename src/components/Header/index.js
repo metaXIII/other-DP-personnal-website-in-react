@@ -13,7 +13,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const changeColor = () => {
     if (window.scrollY >= 50) {
-      // console.log('je scroll de 50');
       dispatch(changeHeaderBackground(true));
     }
     else {
@@ -27,19 +26,13 @@ const Header = () => {
       if (window.innerWidth > 840) {
         dispatch(toggleMenuWithWidth(false));
       }
-      // else {
-      //   dispatch(updateWidth(true));
-      // }
     };
     window.addEventListener('resize', changeWidth);
 
-    // return () => {
-    //   window.removeEventListener('resize', changeWidth);
-    // };
+    return () => {
+      window.removeEventListener('resize', changeWidth);
+    };
   }, []);
-  // const changeWidth = () => (
-  //   dispatch(updateWidth(window.innerWidth))
-  // );
 
   window.addEventListener('scroll', changeColor);
   return (
