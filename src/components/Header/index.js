@@ -62,10 +62,10 @@ const Header = () => {
             OU si la width est supérieur à 840px */}
             {(visibleMenu || width > 840) && (
               <ul className="liste">
-                <li><a href="#services" className="li">&#91; Services &amp; Skill &#93;</a></li>
-                <li><a href="#portfolio" className="li">&#91; Portfolio &#93;</a></li>
-                <li><a href="#about" className="li">&#91; A propos &#93;</a></li>
-                <li><a href="#contact" className="li">&#91; Contact &#93;</a></li>
+                <li><a href="#services" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Services &amp; Skill &#93;</a></li>
+                <li><a href="#portfolio" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Portfolio &#93;</a></li>
+                <li><a href="#about" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; A propos &#93;</a></li>
+                <li><a href="#contact" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Contact &#93;</a></li>
               </ul>
             )}
             <button
