@@ -54,40 +54,57 @@ const Header = () => {
       <HeaderBackground />
       <header className={headerColor ? 'header header_black' : 'header'}>
         <div className="header_container">
-          <h3 className="title title_header">David Poulain</h3>
+          <h3 className={visibleMenu ? 'title title_header header_black' : 'title title_header'}>David Poulain</h3>
         </div>
-        <div className="header_container header_container--nav">
+        {/* affichage de la liste ul si le state visibileMenu est à true
+        OU si la width est supérieur à 840px */}
+        {width > 840 && (
+        <div className={visibleMenu ? 'header_container header_container--nav header_container--nav--display' : 'header_container header_container--nav'}>
+          <nav>
+            <ul className="liste">
+              <li><a href="#services" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Services &amp; Skill &#93;</a></li>
+              <li><a href="#portfolio" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Portfolio &#93;</a></li>
+              <li><a href="#about" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; A propos &#93;</a></li>
+              <li><a href="#contact" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Contact &#93;</a></li>
+            </ul>
+          </nav>
+        </div>
+        )}
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            dispatch(toggleMenu());
+          }}
+        >
+          BTN
+        </button>
+      </header>
+      <button 
+        className="darkmode" 
+        type="button" 
+        name="dark_light" 
+        // onclick="toggleLightMode()" 
+        title="Toggle dark/light mode" 
+      />
+      {width < 840 && (
+        <div className={visibleMenu ? 'header_container header_container--nav header_container--nav--display' : 'header_container header_container--nav'}>
           <nav>
             {/* affichage de la liste ul si le state visibileMenu est à true
             OU si la width est supérieur à 840px */}
-            {(visibleMenu || width > 840) && (
-              <ul className="liste">
-                <li><a href="#services" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Services &amp; Skill &#93;</a></li>
-                <li><a href="#portfolio" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Portfolio &#93;</a></li>
-                <li><a href="#about" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; A propos &#93;</a></li>
-                <li><a href="#contact" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Contact &#93;</a></li>
-              </ul>
-            )}
-            <button
-              type="button"
-              className="btn"
-              onClick={() => {
-                dispatch(toggleMenu());
-              }}
-            >
-              BTN
-            </button>
+            {/* {(visibleMenu || width > 840) && ( */}
+            <ul className="liste">
+              <li><a href="#services" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Services &amp; Skill &#93;</a></li>
+              <li><a href="#portfolio" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Portfolio &#93;</a></li>
+              <li><a href="#about" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; A propos &#93;</a></li>
+              <li><a href="#contact" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Contact &#93;</a></li>
+            </ul>
+            {/* )} */}
           </nav>
         </div>
-      </header>
-      <button 
-            className="darkmode" 
-            type="button" 
-            name="dark_light" 
-            // onclick="toggleLightMode()" 
-            title="Toggle dark/light mode" />
+      )}
     </>
-  )
+  );
 };
 
 export default Header;

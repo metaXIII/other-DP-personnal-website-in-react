@@ -23,7 +23,7 @@
   }
 
   &_background {
-    z-index: 990;
+    z-index: 989;
     position: fixed;
     background-color: #FAF6EC;
     width: 100vw;
@@ -89,6 +89,7 @@ nav li {
   .header {
     
     // margin-top: 15px;
+    z-index: 990;
     padding-top: 15px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -100,16 +101,24 @@ nav li {
     }
 
     &_container--nav {
-      // position: absolute;
-      // top: 0;
-      // left: 0;
-      margin-top: 10px;
+      font-size: 1.2em;
+      position: fixed;
+      z-index: 2;
+      padding-top: 3em;
+      top: -265px;
+      left: 0;
+      margin-right: 0;
+      // margin-top: 10px;
       background-color: #FAF6EC;
       width: 100%;
       justify-content: center;
       text-align: center;
       color: black;
       transition: ease-in-out .3s;
+
+      &--display {
+        top: 0px;
+      }
     }
 
 
@@ -118,7 +127,8 @@ nav li {
 
   .btn { 
     display: block;
-    position: absolute;
+    z-index: 1000;
+    position: fixed;
     right: 30px;
     top: 12.5px;
   }
