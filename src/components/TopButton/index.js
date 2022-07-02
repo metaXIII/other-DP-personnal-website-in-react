@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux';
 const TopButton = () => {
   const headerColor = useSelector((state) => state.headerColor);
   return (
-    <a href="#root" className={headerColor ? 'topButton' : 'topButton topButton-hidden'} />
-    /* <Link to="#top" className={headerColor ? 'topButton' : 'topButton topButton-hidden'} /> */
+    <button onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}} type="button" className={headerColor ? 'topButton' : 'topButton topButton-hidden'} />
   );
 };
 
