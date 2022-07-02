@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <>
       <HeaderBackground />
-      <header className={headerColor ? 'header' : 'header'}>
+      <header id="top" className={headerColor ? 'header header_black' : 'header'}>
         <div className="header_container">
           <h3 className="title title_header">David Poulain</h3>
         </div>
