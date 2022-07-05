@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeHeaderBackground, toggleMenu, updateWidth, toggleMenuWithWidth } from '../../actions';
@@ -71,12 +72,14 @@ const Header = () => {
         )}
         <button
           type="button"
-          className="btn"
+          className="button"
           onClick={() => {
             dispatch(toggleMenu());
           }}
         >
-          BTN
+          <span className={(headerColor || visibleMenu) ? 'burger burger_black burger_top' : 'burger burger_top'} />
+          <span className={(headerColor || visibleMenu) ? 'burger burger_black burger_middle' : 'burger burger_middle'} />
+          <span className={(headerColor || visibleMenu) ? 'burger burger_black burger_bottom' : 'burger burger_bottom'} />
         </button>
       </header>
       <button 

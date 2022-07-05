@@ -77,8 +77,25 @@ nav li {
   
 }
 
-.btn {
+.button {
   display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 40px;
+  cursor: pointer;
+  border: solid 1px black;
+  border: none;
+  background: transparent;
+  position: fixed;
+  right: 25px;
+  top: 5px;
+}
+
+.burger_button {
+  
 }
 
 .liste {
@@ -121,16 +138,33 @@ nav li {
       }
     }
 
-
-
   }
 
-  .btn { 
+  .burger { 
     display: block;
     z-index: 1000;
-    position: fixed;
-    right: 30px;
-    top: 12.5px;
+    background: #FAF6EC;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    border: none;
+    transition: ease-in-out .3s;
+
+    &_black {
+      background: black;
+    }
+
+    &_top {
+      transform: translateY(-7px);
+    }
+
+    &_middle {
+
+    }
+
+    &_bottom {
+      transform: translateY(7px);
+    }
   }
 
   nav li {
