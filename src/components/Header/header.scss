@@ -156,14 +156,26 @@ nav li {
 
     &_top {
       transform: translateY(-7px);
+      
+      &--open {
+        transform: rotate(45deg) translate(-2px, 7px);
+      }
     }
 
     &_middle {
-
+      
+      &--open {
+        background: transparent;
+        width: 0;
+      }
     }
 
     &_bottom {
       transform: translateY(7px);
+      
+      &--open {
+        transform: rotate(-45deg) translate(-3px, -7px);
+      }
     }
   }
 
