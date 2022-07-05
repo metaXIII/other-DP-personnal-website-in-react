@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeHeaderBackground, toggleMenu, updateWidth, toggleMenuWithWidth } from '../../actions';
@@ -61,30 +63,32 @@ const Header = () => {
         <div className={visibleMenu ? 'header_container header_container--nav header_container--nav--display' : 'header_container header_container--nav'}>
           <nav>
             <ul className="liste">
-              <li><a href="#services" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Services &amp; Skill &#93;</a></li>
-              <li><a href="#portfolio" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Portfolio &#93;</a></li>
-              <li><a href="#about" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; A propos &#93;</a></li>
-              <li><a href="#contact" onClick={() => {dispatch(toggleMenu());}} className="li">&#91; Contact &#93;</a></li>
+              <li><a href="#services" className="li">&#91; Services &amp; Skill &#93;</a></li>
+              <li><a href="#portfolio" className="li">&#91; Portfolio &#93;</a></li>
+              <li><a href="#about" className="li">&#91; A propos &#93;</a></li>
+              <li><a href="#contact" className="li">&#91; Contact &#93;</a></li>
             </ul>
           </nav>
         </div>
         )}
         <button
           type="button"
-          className="btn"
+          className="button"
           onClick={() => {
             dispatch(toggleMenu());
           }}
         >
-          BTN
+          <span className={`burger ${headerColor || visibleMenu ? 'burger_black' : ''} burger_top ${visibleMenu ? 'burger_top--open' : ''}`} />
+          <span className={`burger ${headerColor || visibleMenu ? 'burger_black' : ''} burger_middle ${visibleMenu ? 'burger_middle--open' : ''}`} />
+          <span className={`burger ${headerColor || visibleMenu ? 'burger_black' : ''} burger_bottom ${visibleMenu ? 'burger_bottom--open' : ''}`} />
         </button>
       </header>
-      <button 
-        className="darkmode" 
-        type="button" 
-        name="dark_light" 
-        // onclick="toggleLightMode()" 
-        title="Toggle dark/light mode" 
+      <button
+        className="darkmode"
+        type="button"
+        name="dark_light"
+        // onclick="toggleLightMode()"
+        title="Toggle dark/light mode"
       />
       {/* /* this nav is render only if width est under à 840px */}
       {width < 840 && (
