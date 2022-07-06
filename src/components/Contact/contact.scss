@@ -10,12 +10,12 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 1.5em;
-    margin-left: 2%;
+    margin-left: 5%;
     
   }
 
   &--mail {
-    font-size: clamp(2rem, 5vw + 1rem, 12rem);
+    font-size: clamp(1rem, 5vw + 1rem, 12rem);
     text-align: right;
     margin-left: auto;
     max-width: 50vw;
@@ -65,5 +65,11 @@
 
   &:hover::after {
     transform: scaleX(1);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section_contact--mail {
+    margin: auto;
   }
 }
