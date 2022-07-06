@@ -1,0 +1,14 @@
+.PortfolioElement {
+  height: 50px;
+  background-color: aqua;
+  color: black;
+  cursor: pointer;
+  transition: ease-in-out .3s;
+  
+  
+
+  &::after {
+    content: '';
+    height: 150px;
+  }
+}
