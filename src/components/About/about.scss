@@ -1,0 +1,50 @@
+.section_about {
+  margin-bottom: 4em;
+}
+
+.flexContainer_about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+  // flex-wrap: wrap;
+
+  & > * {
+    flex-basis: 100%;
+  }
+}
+
+.photo {
+  width: 80%;
+  // margin: auto;
+  border-bottom-right-radius: 60px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  max-width: 50%;
+  min-height: 400px;
+
+  &_photo {
+    // background-image: url(../../assets/images/david.jpeg);
+    // background-position: center;
+    // background-size: 50%;
+    // background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .flexContainer_about {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .photo {
+    width: 100%;
+  }
+}
