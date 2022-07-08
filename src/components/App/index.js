@@ -18,36 +18,36 @@ import './styles.scss';
 function App() {
   const dispatch = useDispatch();
   const customCursorVisible = useSelector((state) => state.customCursorVisible);
-  const app = document.querySelector('.app');
-  let cursor = React.createRef();
+  const cursor = React.createRef();
   const cursorXposition = useSelector((state) => state.cursorXposition);
   const cursorYposition = useSelector((state) => state.cursorYposition);
-  const mousePosition = event => {
-    cursor.current.setAttribute('style', `top:${event.clientY + window.pageYOffset - 15}px; left:${event.clientX - 15}px;`);
+  const mousePosition = (event) => {
+    cursor.current.setAttribute('style', `top:${event.clientY}px; left:${event.clientX}px;`);
+    // cursor.current.setAttribute('style', `transform : translate(-50%, -50%) translate(${event.clientY + window.pageYOffset - 15}px,${event.clientX + window.pageXOffset - 15}px);`);
   };
 
-  const mousePositionWithScroll = event => {
-    // console.log(cursor.current.style.top);
+  const mousePositionWithScroll = () => {
     // console.log(window.pageYOffset);
     const cursorPositionTop = parseInt(cursor.current.style.top, 10);
     const cursorPositionLeft = parseInt(cursor.current.style.left, 10);
-    const windowY = window.pageYOffset;
-    const windowX = window.pageXOffset;
+    
+    // const windowY = window.pageYOffset;
+    const windowY = window.scrollY;
+    const windowX = window.scrollX;
     const scrollCursorPositionTop = cursorPositionTop + windowY;
     const scrollCursorPositionLeft = cursorPositionLeft + windowX;
-    console.log(cursorPositionTop);
+    console.log(scrollCursorPositionTop - 15 + 'px');
+    // console.log(scrollCursorPositionTop);
+    // console.log(cursorPositionTop);
     // console.log(window.pageYOffset);
     // console.log(event);
     // console.log(window.pageYOffset);
     // console.log(cursor.current.getAttribute('style'));
     // console.log(cursor.current.style.top);
     cursor.current.setAttribute('style', `top:${scrollCursorPositionTop - 15}px; left:${scrollCursorPositionLeft - 15}px;`);
-    // console.log(cursor.current);
+    console.log(cursor.current);
   };
 
-  const toto = () => {
-    console.log(window.pageYOffset);
-  };
   const hideCursor = () => {
     dispatch(hideCustomCursor());
   };
@@ -56,10 +56,10 @@ function App() {
     dispatch(showCustomCursor());
   };
 
-  window.addEventListener('scroll', mousePositionWithScroll);
+  window.addEventListener('mousemove', mousePosition);
 
   return (
-    <div onMouseMove={mousePosition} onMouseLeave={hideCursor} onMouseEnter={showCursor} className="app">
+    <div onMouseLeave={hideCursor} onMouseEnter={showCursor} className="app">
       { customCursorVisible && (<CustomCursor ref={cursor} />)}
       <Header />
       <TopButton />
