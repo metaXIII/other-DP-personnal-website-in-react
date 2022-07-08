@@ -1,10 +1,12 @@
-import { CHANGE_HEADER_BACKGROUND, TOGGLE_MENU, UPDATE_WIDTH, TOGGLE_MENU_WITH_WIDTH, HIDE_CUSTOM_CURSOR, SHOW_CUSTOM_CURSOR } from '../actions';
+import { CHANGE_HEADER_BACKGROUND, TOGGLE_MENU, UPDATE_WIDTH, TOGGLE_MENU_WITH_WIDTH, HIDE_CUSTOM_CURSOR, SHOW_CUSTOM_CURSOR, UPDATE_CURSOR_POSITION } from '../actions';
 
 const initialState = {
   headerColor: false,
   visibleMenu: false,
   customCursorVisible: true,
   width: window.innerWidth,
+  cursorXposition: '',
+  cursorYposition: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -43,6 +45,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         customCursorVisible: true,
+      };
+
+    case UPDATE_CURSOR_POSITION:
+      return {
+        ...state,
+        cursorXposition: action.Xposition,
+        cursorYposition: action.Yposition,
       };
 
     default:
