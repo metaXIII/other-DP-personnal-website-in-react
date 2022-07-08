@@ -4,7 +4,8 @@ export const UPDATE_WIDTH = 'UPDATE_WIDTH';
 export const TOGGLE_MENU_WITH_WIDTH = 'TOGGLE_MENU_WITH_WIDTH';
 export const HIDE_CUSTOM_CURSOR = 'HIDE_CUSTOM_CURSOR';
 export const SHOW_CUSTOM_CURSOR = 'SHOW_CUSTOM_CURSOR';
-export const UPDATE_CURSOR_POSITION = 'UPDATE_CURSOR_POSITION';
+export const CURSOR_BACKDROP = 'CURSOR_BACKDROP';
+export const CURSOR_LEAVE_CONTENT = 'CURSOR_LEAVE_CONTENT';
 
 export const changeHeaderBackground = (newValue) => ({
   type: CHANGE_HEADER_BACKGROUND,
@@ -33,8 +34,10 @@ export const showCustomCursor = () => ({
   type: SHOW_CUSTOM_CURSOR,
 });
 
-export const updateCursorPosition = (Xposition, Yposition) => ({
-  type: UPDATE_CURSOR_POSITION,
-  Xposition: Xposition,
-  Yposition: Yposition,
+export const cursorBackdrop = () => ({
+  type: CURSOR_BACKDROP,
+});
+
+export const cursorLeaveContent = () => ({
+  type: CURSOR_LEAVE_CONTENT,
 });

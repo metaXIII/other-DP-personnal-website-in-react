@@ -1,7 +1,7 @@
 // == Import
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideCustomCursor, showCustomCursor, updateCursorPosition } from 'src/actions';
+import { hideCustomCursor, showCustomCursor, cursorBackdrop, cursorLeaveContent } from 'src/actions';
 
 import Header from 'src/components/Header';
 import Portfolio from 'src/components/Portfolio';
@@ -19,33 +19,26 @@ function App() {
   const dispatch = useDispatch();
   const customCursorVisible = useSelector((state) => state.customCursorVisible);
   const cursor = React.createRef();
-  const cursorXposition = useSelector((state) => state.cursorXposition);
-  const cursorYposition = useSelector((state) => state.cursorYposition);
   const mousePosition = (event) => {
     cursor.current.setAttribute('style', `top:${event.clientY}px; left:${event.clientX}px;`);
-    // cursor.current.setAttribute('style', `transform : translate(-50%, -50%) translate(${event.clientY + window.pageYOffset - 15}px,${event.clientX + window.pageXOffset - 15}px);`);
   };
 
-  const mousePositionWithScroll = () => {
-    // console.log(window.pageYOffset);
-    const cursorPositionTop = parseInt(cursor.current.style.top, 10);
-    const cursorPositionLeft = parseInt(cursor.current.style.left, 10);
-    
-    // const windowY = window.pageYOffset;
-    const windowY = window.scrollY;
-    const windowX = window.scrollX;
-    const scrollCursorPositionTop = cursorPositionTop + windowY;
-    const scrollCursorPositionLeft = cursorPositionLeft + windowX;
-    console.log(scrollCursorPositionTop - 15 + 'px');
-    // console.log(scrollCursorPositionTop);
-    // console.log(cursorPositionTop);
-    // console.log(window.pageYOffset);
-    // console.log(event);
-    // console.log(window.pageYOffset);
-    // console.log(cursor.current.getAttribute('style'));
-    // console.log(cursor.current.style.top);
-    cursor.current.setAttribute('style', `top:${scrollCursorPositionTop - 15}px; left:${scrollCursorPositionLeft - 15}px;`);
-    console.log(cursor.current);
+  useEffect(() => {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
+      dispatch(hideCustomCursor());
+    }
+  }, []);
+
+  const handleBackdrop = (event) => {
+    if (event.target.className === 'photo') {
+      dispatch(cursorBackdrop());
+    }
+  };
+
+  const handleBackdropOff = (event) => {
+    if (event.target.className === 'photo') {
+      dispatch(cursorLeaveContent());
+    }
   };
 
   const hideCursor = () => {
@@ -56,10 +49,8 @@ function App() {
     dispatch(showCustomCursor());
   };
 
-  window.addEventListener('mousemove', mousePosition);
-
   return (
-    <div onMouseLeave={hideCursor} onMouseEnter={showCursor} className="app">
+    <div onMouseMove={mousePosition} onMouseLeave={hideCursor} onMouseOver={handleBackdrop} onMouseOut={handleBackdropOff} onMouseEnter={showCursor} className="app">
       { customCursorVisible && (<CustomCursor ref={cursor} />)}
       <Header />
       <TopButton />
