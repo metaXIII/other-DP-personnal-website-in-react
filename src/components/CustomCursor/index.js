@@ -5,8 +5,9 @@ import './customCursor.scss';
 
 const CustomCursor = React.forwardRef((props, ref) => {
   const backdrop = useSelector((state) => state.backdrop);
+  const overlink = useSelector((state) => state.overlink);
   return (
-    <div ref={ref} className={backdrop ? 'cursor cursor--backdrop' : 'cursor'} />
+    <div ref={ref} className={`cursor ${backdrop ? 'cursor--backdrop' : ''} `} />
   );
 });
 

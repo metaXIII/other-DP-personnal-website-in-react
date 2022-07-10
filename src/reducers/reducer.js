@@ -1,4 +1,13 @@
-import { CHANGE_HEADER_BACKGROUND, TOGGLE_MENU, UPDATE_WIDTH, TOGGLE_MENU_WITH_WIDTH, HIDE_CUSTOM_CURSOR, SHOW_CUSTOM_CURSOR, CURSOR_BACKDROP, CURSOR_LEAVE_CONTENT } from '../actions';
+import {
+  CHANGE_HEADER_BACKGROUND,
+  TOGGLE_MENU, UPDATE_WIDTH,
+  TOGGLE_MENU_WITH_WIDTH,
+  HIDE_CUSTOM_CURSOR,
+  SHOW_CUSTOM_CURSOR,
+  CURSOR_BACKDROP,
+  CURSOR_LEAVE_CONTENT,
+  CURSOR_OVER_LINK,
+} from '../actions';
 
 const initialState = {
   headerColor: false,
@@ -6,6 +15,7 @@ const initialState = {
   customCursorVisible: true,
   width: window.innerWidth,
   backdrop: false,
+  overlink: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -52,10 +62,17 @@ const reducer = (state = initialState, action = {}) => {
         backdrop: true,
       };
 
+    case CURSOR_OVER_LINK:
+      return {
+        ...state,
+        overlink: true,
+      };
+
     case CURSOR_LEAVE_CONTENT:
       return {
         ...state,
         backdrop: false,
+        overlink: false,
       };
 
     default:
