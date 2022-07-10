@@ -1,7 +1,7 @@
 // == Import
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideCustomCursor, showCustomCursor, cursorBackdrop, cursorLeaveContent } from 'src/actions';
+import { hideCustomCursor, showCustomCursor, cursorBackdrop, cursorOverLink, cursorLeaveContent } from 'src/actions';
 
 import Header from 'src/components/Header';
 import Portfolio from 'src/components/Portfolio';
@@ -29,14 +29,17 @@ function App() {
     }
   }, []);
 
-  const handleBackdrop = (event) => {
+  const handleMouseOver = (event) => {
     if (event.target.className === 'photo') {
       dispatch(cursorBackdrop());
+    }
+    if (event.target.className === 'li') {
+      dispatch(cursorOverLink());
     }
   };
 
   const handleBackdropOff = (event) => {
-    if (event.target.className === 'photo') {
+    if (event.target.className === 'photo' || 'li') {
       dispatch(cursorLeaveContent());
     }
   };
@@ -50,7 +53,7 @@ function App() {
   };
 
   return (
-    <div onMouseMove={mousePosition} onMouseLeave={hideCursor} onMouseOver={handleBackdrop} onMouseOut={handleBackdropOff} onMouseEnter={showCursor} className="app">
+    <div onMouseMove={mousePosition} onMouseLeave={hideCursor} onMouseOver={handleMouseOver} onMouseOut={handleBackdropOff} onMouseEnter={showCursor} className="app">
       { customCursorVisible && (<CustomCursor ref={cursor} />)}
       <Header />
       <TopButton />
