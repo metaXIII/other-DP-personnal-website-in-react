@@ -12,9 +12,7 @@
   z-index: 1000;
   transform: translate(-50%, -50%);
   transition: .08s;
-  // transition-duration: 200ms;
-  // transition-timing-function: ease-out;
-  // transition: all 0.003s ease;
+  
   &--backdrop {
     backdrop-filter: grayscale(100%);
     width: 70px;
