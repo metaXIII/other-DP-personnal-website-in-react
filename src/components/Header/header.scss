@@ -50,7 +50,7 @@ nav ul {
 nav li {
   list-style: none;
   margin: 0 1em;
-  transition: ease-in-out .2s;
+  transition: ease-out .2s;
 
   &:hover {
     transform: scale(1.03);
