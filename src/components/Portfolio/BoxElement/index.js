@@ -11,12 +11,12 @@ const BoxElement = () => (
     </div>
     <div className="card_back">
       <div className="card_back--info">
-        <p className="role">Product Owner, Lead Dev Front</p>
+        <p className="role">Poste : Product Owner, Lead Dev Front</p>
         <p className="client">Projet de fin de formation</p>
       </div>
-      <button className="card_back--buton" type="button">Voir le projet</button>
+      <button className="card_back--button" type="button">Voir le projet</button>
       <div className="card_back--techno">
-        <p className="technoList">React.JS, Redux, Symfony</p>
+        <p className="technoList">Technos utilisées : React.JS, Redux, Symfony</p>
       </div>
     </div>
     <div className="card_background" />
