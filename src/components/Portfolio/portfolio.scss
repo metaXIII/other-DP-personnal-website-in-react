@@ -6,60 +6,73 @@
   row-gap: 15px;
 }
 
-.box {
-  margin: 1em 0em;
-  margin-bottom: 2em;
-  width: 250px;
-  height: 360px;
-  background-color: transparent;
-  perspective: 1000px;
-  &:hover .card{
-    transform: rotateY(180deg);
-    // transition: transform 0.7s ease-in-out;
-  }
 
-}
 
-.card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.7s ease-in-out;
-  transform-style: preserve-3d;
 
-  &_button {
-    width: 70px;
-    height: 25px;
-  }
 
-  &_front,
-  .card_back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
 
-  &_front {
-    // background-color: #cccccc;
-    background-image: url(../../assets/images/cardbackground.jpg);
-    background-position: center;
-    background-size: cover;
-    color: #111111;
-    display: grid;
-    place-items: center;
-    border-radius: 8px;
-  }
-  &_back {
-    background-color: #FAF6EC;
-    color: #eeeeee;
-    transform: rotateY(180deg);
-    display: grid;
-    place-items: center;
-    border-radius: 8px;
-  }
 
-  }
+
+
+
+
+
+//* CSS classic card
+
+// .box {
+//   margin: 1em 0em;
+//   margin-bottom: 2em;
+//   width: 350px;
+//   height: 350px;
+//   background-color: transparent;
+//   perspective: 1000px;
+//   &:hover .card{
+//     transform: rotateY(180deg);
+//     // transition: transform 0.7s ease-in-out;
+//   }
+
+// }
+
+// .card {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   transition: transform 0.7s ease-in-out;
+//   transform-style: preserve-3d;
+
+//   &_button {
+//     width: 70px;
+//     height: 25px;
+//   }
+
+//   &_front,
+//   .card_back {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     backface-visibility: hidden;
+//   }
+
+//   &_front {
+//     // background-color: #cccccc;
+//     background-image: url(../../assets/images/FYP.png);
+//     background-position: right;
+//     background-size: cover;
+//     color: #111111;
+//     display: grid;
+//     place-items: center;
+//     border-radius: 8px;
+//   }
+//   &_back {
+//     background-color: #FAF6EC;
+//     color: #eeeeee;
+//     transform: rotateY(180deg);
+//     display: grid;
+//     place-items: center;
+//     border-radius: 8px;
+//   }
+
+//   }
 
 
 
