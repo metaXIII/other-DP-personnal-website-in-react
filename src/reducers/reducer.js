@@ -12,7 +12,7 @@ import {
 const initialState = {
   headerColor: false,
   visibleMenu: false,
-  customCursorVisible: true,
+  customCursorVisible: false,
   width: window.innerWidth,
   backdrop: false,
   overlink: false,

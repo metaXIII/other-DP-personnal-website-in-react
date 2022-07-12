@@ -1,5 +1,11 @@
 .section_serviceSkill {
   margin-bottom: 4em;
+  animation: displaySection 600ms ease-in;
+
+  &--notvisibile {
+    opacity: 0;
+    animation: hiddenSection 600ms ease-in;
+  }
 }
 
 .flexContainer {
@@ -83,6 +89,46 @@
   width: 98%;
   height: 1px;
   background-color: #FAF6EC;
+}
+
+@keyframes displaySection {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+@keyframes hiddenSection {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+
+  100% {
+    opacity: 0;
+  }
+  
 }
 
 @media screen and (max-width: 600px) {
