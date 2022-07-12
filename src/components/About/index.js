@@ -10,10 +10,20 @@ const About = () => (
         <img src={picture} alt="David Poulain" className="photo" />
       </article>
       <article className="container container_text">
-        <p>Je m'appelle David, et je suis développeur web.</p>
-        <p>Mon intérêt pour le monde du web, du design et de l'informatique m'a poussé à entamer une reconversion professionnelle. En janvier 2022 j'ai débuté ma formation de développeur auprès de l'école O'Clock, au sein de la promo Boson. Si vous souhaitez connaitre le programme de cette formation, vous pouvez le consulter ici.</p>
-        <p>Mon appétence pour le visuel, l'art et le design m'a naturellement orienté vers le domaine du front-end : l'ensemble des éléments que l'utilisateur peut voir et avec lesquels il peut intéragir directement.</p>
-        <p>En tant que développeur, je souhaite créer des expériences visuelles et interactives qui soient toujours satisfaisante pour l'utilisateur afin qu'il puisse se concentrer sur l'essentiel : ce que vous souhaitez lui transmettre.</p>
+        <p>Mon intérêt pour le monde du web, du design et de l&#39;informatique m&#39;a poussé à entamer une
+          reconversion pour devenir développeur web. C’est en janvier 2022 que j’ai commencé ma formation
+          grâce à l’école O’Clock (promo Boson). Si vous souhaitez en connaître le programme, vous pouvez le
+          consulter ici.
+        </p>
+        <p>Mon goût prononcé pour le visuel, l’art et le design, m’a naturellement orienté vers le domaine du
+          front-end, c’est-à-dire vers l’ensemble des éléments visibles pour l’utilisateur et avec lesquels il peut
+          directement interagir.
+        </p>
+        <p>En qualité de développeur, j’aimerais créer des expériences visuelles et interactives toujours
+          satisfaisantes pour l&#39;utilisateur afin qu&#39;il puisse se concentrer sur l&#39;essentiel : les messages que vous
+          souhaitez lui transmettre.
+        </p>
+        <p>David.</p>
       </article>
     </div>
   </section>
