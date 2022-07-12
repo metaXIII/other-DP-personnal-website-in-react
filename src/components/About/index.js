@@ -10,8 +10,10 @@ const About = () => (
         <img src={picture} alt="David Poulain" className="photo" />
       </article>
       <article className="container container_text">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore deserunt harum quam voluptas, soluta voluptatem sed doloremque unde debitis corporis quidem, quasi error recusandae rerum suscipit ut voluptate reiciendis earum iusto a explicabo adipisci. Molestiae a pariatur corrupti ad necessitatibus vero optio veritatis rem nemo. Perspiciatis, quam tempore enim, cum eveniet eius fugiat adipisci consectetur deserunt aperiam esse commodi placeat optio perferendis deleniti! Minus explicabo sunt omnis maiores et minima perspiciatis voluptatum quaerat mollitia, suscipit eum natus voluptas ipsam magni ullam perferendis, excepturi voluptatem quae porro autem in nisi vitae. Quaerat, unde repudiandae nesciunt pariatur perspiciatis temporibus optio ratione maxime.
-        </p>
+        <p>Je m'appelle David, et je suis développeur web.</p>
+        <p>Mon intérêt pour le monde du web, du design et de l'informatique m'a poussé à entamer une reconversion professionnelle. En janvier 2022 j'ai débuté ma formation de développeur auprès de l'école O'Clock, au sein de la promo Boson. Si vous souhaitez connaitre le programme de cette formation, vous pouvez le consulter ici.</p>
+        <p>Mon appétence pour le visuel, l'art et le design m'a naturellement orienté vers le domaine du front-end : l'ensemble des éléments que l'utilisateur peut voir et avec lesquels il peut intéragir directement.</p>
+        <p>En tant que développeur, je souhaite créer des expériences visuelles et interactives qui soient toujours satisfaisante pour l'utilisateur afin qu'il puisse se concentrer sur l'essentiel : ce que vous souhaitez lui transmettre.</p>
       </article>
     </div>
   </section>
