@@ -9,8 +9,7 @@ const ServicesSkill = () => (
         <article className="service_card service_card--front">
           <h3 className="service_card_title">développement front-end</h3>
           <div className="separator" />
-          <p>Développer des applications web dynamiques.<br />
-            Utilisations d'API, base de données, sessions.
+          <p>Développer des applications web dynamiques. Utilisation de store et de composants. Utilisations d'API, base de données, sessions.
           </p>
           <ul>
             <li>React.JS</li>
@@ -35,6 +34,7 @@ const ServicesSkill = () => (
         <article className="service_card service_card--back">
           <h3 className="service_card_title">développement back-end</h3>
           <div className="separator" />
+          <p>Structurer une application, organiser les données, gestion via le back-office. Etablissement des requêtes.</p>
           <ul>
             <li>PHP</li>
             <li>Programmation Orienté Objet</li>
@@ -44,6 +44,7 @@ const ServicesSkill = () => (
         <article className="service_card service_card--project">
           <h3 className="service_card_title">Gestion de projet numérique</h3>
           <div className="separator" />
+          <p>Définition des objectifs, établissement d'un cahier des charges, réflexion sur le design, organisation du développement en sprint.</p>
           <ul>
             <li>Cahier des charges</li>
             <li>User Stories</li>
