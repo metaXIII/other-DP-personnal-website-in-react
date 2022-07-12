@@ -9,6 +9,31 @@
 
 .section_portfolio {
   margin-bottom: 3em;
+  animation: displaySection 600ms ease-in;
+
+  &--notvisibile {
+    opacity: 0;
+  }
+}
+
+@keyframes displaySection {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+
+  100% {
+    opacity: 1;
+  }
+  
 }
 
 

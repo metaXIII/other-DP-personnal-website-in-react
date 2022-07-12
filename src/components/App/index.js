@@ -1,7 +1,14 @@
 // == Import
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { hideCustomCursor, showCustomCursor, cursorBackdrop, cursorOverLink, cursorLeaveContent } from 'src/actions';
+import { useInView } from 'react-intersection-observer';
+import {
+  hideCustomCursor,
+  showCustomCursor,
+  cursorBackdrop,
+  cursorOverLink,
+  cursorLeaveContent,
+} from 'src/actions';
 
 import Header from 'src/components/Header';
 import Portfolio from 'src/components/Portfolio';
@@ -17,6 +24,7 @@ import './styles.scss';
 // == Composant
 function App() {
   const dispatch = useDispatch();
+  const { ref, inView } = useInView();
   const customCursorVisible = useSelector((state) => state.customCursorVisible);
   const cursor = React.createRef();
   const mousePosition = (event) => {
@@ -60,6 +68,7 @@ function App() {
       <MainTitile />
       <ServicesSkill />
       <Portfolio />
+      {/* { inView && (<About ref={ref} />)} */}
       <About />
       <Contact />
     </div>
