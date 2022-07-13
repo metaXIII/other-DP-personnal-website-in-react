@@ -26,7 +26,7 @@ const ServicesSkill = () => {
             <article className="service_card service_card--integration">
               <h3 className="service_card_title">intégration web</h3>
               <div className="separator" />
-              <p>Réalisation de site web responsive, adatpé aux mobiles. Toujours rechercher une expérience utilisateur optimale.</p>
+              <p>Réaliser des sites responsive adaptés aux mobiles. S'assurer qu'ils soient accessiblent avec une interface soignée pour une expérience utilisateur toujours satisfaisante.</p>
               <ul>
                 <li>HTML5</li>
                 <li>CSS3</li>
@@ -47,14 +47,14 @@ const ServicesSkill = () => {
               </ul>
             </article>
             <article className="service_card service_card--project">
-              <h3 className="service_card_title">Gestion de projet numérique</h3>
+              <h3 className="service_card_title">gestion de projet numérique</h3>
               <div className="separator" />
               <p>Définition des objectifs, établissement d'un cahier des charges, réflexion sur le design, organisation du développement en sprint.</p>
-              <ul>
+              <ul className="toto">
+                <li>Versionning Git/GitHub</li>
                 <li>Cahier des charges</li>
                 <li>User Stories</li>
                 <li>Wireframes / Maquettes</li>
-                <li>Versionning Git/GitHub</li>
               </ul>
             </article>
           </section>

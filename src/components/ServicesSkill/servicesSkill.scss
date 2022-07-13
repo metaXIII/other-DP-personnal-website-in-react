@@ -16,14 +16,14 @@
 .flexContainer {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 4em;
 }
 
 .section_service {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 30px;
+  gap: 60px;
   // flex-wrap: wrap;
 
   & > * {
@@ -34,7 +34,7 @@
 .service_card {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
+  max-width: 45%;
   min-height: 400px;
   background-color: #362724ce;
   border-bottom-right-radius: 60px;
@@ -46,6 +46,7 @@
 
   & p {
     font-size: 1.3em;
+    font-weight: 300;
   }
 
   & h3 {
@@ -56,11 +57,22 @@
   & ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5em;
+    height: 100%;
+    // width: 90%;
+    gap: 1em;
     margin-top: 2em;
-    justify-content: space-around;
-    align-content: center;
-    font-size: 1.8em;
+    justify-content: flex-start;
+    align-content: flex-end;
+    font-size: 1.3em;
+
+    & li {
+      // border: solid 1px #FAF6EC;
+      // height: 2em;
+      // line-height: 1.5em;
+      // border-radius: 100vw;
+      // padding: 0.3em 0.7em;
+
+    }
 
   }
 
@@ -88,6 +100,10 @@
   word-break: break-word;
   // margin-bottom: 1em;
  }
+}
+
+.toto {
+  
 }
 
 .separator {
@@ -136,9 +152,13 @@
   
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .section_service {
     flex-wrap: wrap;
+  }
+
+  .section_serviceSkill {
+    padding: 4em 2%;
   }
 
   .service_card {
