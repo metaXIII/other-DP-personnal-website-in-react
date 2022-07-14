@@ -14,12 +14,12 @@
   justify-content: center;
   align-items: flex-start;
   margin: 20em auto;
-  margin-top: 16em;
+  margin-top: 17em;
   
 }
 
 .title_main {
-  font-size: clamp(2rem, 6vw + 1rem, 12rem);
+  font-size: clamp(2rem, 6vw + 2rem, 12rem);
   line-height: 1.05;
   // margin-right: 2em;
 
@@ -133,7 +133,7 @@
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 480px) {
   .home_container {
     margin: 20em 10%;
   }

@@ -7,11 +7,11 @@ const BoxElement = () => (
     <div className="card_front">
       <img className="card_front--image" src={FYP} alt="Follow Your Party" />
       <h3 className="card--name">Follow Your Party</h3>
-      <p className="card--date">Juin 2022</p>
+      <p className="card--date">06 / 22</p>
     </div>
     <div className="card_back">
       <div className="card_back--info">
-        <p className="role">Poste : Product Owner, Lead Dev Front</p>
+        <p className="role">Product Owner, Lead Dev Front</p>
         <p className="client">Projet de fin de formation</p>
       </div>
       <button className="card_back--button" type="button">Voir le projet</button>

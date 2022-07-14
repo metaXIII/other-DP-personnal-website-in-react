@@ -10,7 +10,7 @@
     }
 
     .card_front--image {
-      box-shadow: 5px -5px 13px rgba(0, 0, 0, 0.61);
+      // box-shadow: 5px -5px 13px rgba(0, 0, 0, 0.61);
     }
 
     .card--name {
@@ -30,11 +30,20 @@
   }
 
   &--name {
+    // border-top: dashed 2px #faf6ec;
+    padding-top: 0.5em;
     margin: 0.75em 0;
+  }
+
+  &--date {
+    font-weight: 300;
   }
 
   &_front {
     transition: 250ms;
+    
+    border-bottom: dashed 2px #faf6ec;
+    padding-bottom: 1em;
     
     &--image {
       max-width: 100%;
@@ -54,11 +63,38 @@
     gap: 1.3em;
 
     &--button {      
+      position: relative;
+      font-size: 1em;
+      z-index: 1;
       cursor: pointer;
+      color: #faf6ec;
       border: 0;
-      background: #faf6ec;
+      background: transparent;
+      border: solid 1px #faf6ec ;
       border-bottom-right-radius: 15px;
       padding: .5em 1.5em;
+      &:hover {
+        color: #17191B;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #FAF6EC;
+        border-radius: inherit;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 300ms ease-in-out;
+      }
+    
+      &:hover::after {
+        transform: scaleX(1);
+      }
     }
 
     &--info {
@@ -82,7 +118,7 @@
     z-index: -1;
     transform: scale(1, 1.1);
     
-    border-bottom-right-radius: 20px;
+    // border-bottom-right-radius: 20px;
   }
 }
 

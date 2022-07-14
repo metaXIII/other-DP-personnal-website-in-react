@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-content: center;
   flex-wrap: wrap;
-  height: 50px;
+  height: 60px;
   width: 100vw;
   font-size: 1.3em;  
 
@@ -27,8 +27,8 @@
     position: fixed;
     background-color: #FAF6EC;
     width: 100vw;
-    height: 50px;
-    top: -50px;
+    height: 60px;
+    top: -60px;
     left: 0;
     animation: 3s linear;
     transform: translate3d(0, 0, 0);
@@ -64,7 +64,7 @@ nav li {
 .darkmode {
   z-index: 990;
   position: fixed;
-  top : 12.5px;
+  top : 18.5px;
   right: 10px;
   height: 20px;
   width: 20px;
@@ -91,7 +91,7 @@ nav li {
   background: transparent;
   position: fixed;
   right: 25px;
-  top: 5px;
+  top: 10px;
 }
 
 .burger_button {
@@ -107,7 +107,7 @@ nav li {
     
     // margin-top: 15px;
     z-index: 990;
-    padding-top: 15px;
+    padding-top: 23px;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
@@ -196,7 +196,7 @@ nav li {
 
   .darkmode {
     right: 85px;
-    top: 12.5px;
+    top: 18.5px;
   }
 
   nav ul {
